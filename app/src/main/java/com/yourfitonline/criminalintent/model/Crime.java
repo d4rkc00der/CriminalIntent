@@ -1,14 +1,31 @@
 package com.yourfitonline.criminalintent.model;
 
+import java.util.Date;
 import java.util.UUID;
 
-/**
- * Created by evgenyshumakov on 20.11.16.
- */
 
 public class Crime {
 
     private UUID mId;
+
+    public Date getDate() {
+        return mDate;
+    }
+
+    public void setDate(Date date) {
+        this.mDate = date;
+    }
+
+    public boolean getSolved() {
+        return mSolved;
+    }
+
+    public void setSolved(boolean solved) {
+        this.mSolved = solved;
+    }
+
+    private Date mDate;
+    private boolean mSolved;
 
     public String getTitle() {
         return mTitle;
@@ -22,5 +39,6 @@ public class Crime {
 
     public Crime() {
         mId = UUID.randomUUID();
+        mDate = new Date();
     }
 }
